@@ -1,6 +1,9 @@
 # Riot-Api
 Riot Api 
 
+Languages used 
+Angular JS / PHP
+
 This is league of legends Api that helps you find live match information.
 
 Improvements that can be made or functionality issues
