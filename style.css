@@ -1,0 +1,22 @@
+
+
+.champimage{
+		width:4%;
+		float:left;
+	}
+.list {
+	list-style-type: none;
+	
+}
+.champtxt {
+	margin:0;
+	float:left;
+}
+.main{
+	text-align:center;
+}
+.tablecontent {
+	
+	margin-right:auto;
+	margin-left:auto;
+}

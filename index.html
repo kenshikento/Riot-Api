@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="leagueoffeeds">
+<head lang="en">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  <!-- Scripts -->
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>League of Feeds</title>
+</head>
+<body>
+
+<h2 class = "main">League Feast</h2>
+
+<div ng-controller="mainController" class="main">
+	
+    <form  name="myForm">
+        <p>Nom Nom</p>
+        <div>
+            
+			<input type="text" placeholder="Summoner Name" name="summonname"  ng-model="summonname" required>
+        
+			<span style="color:red" ng-show="myForm.summonname.$dirty && myForm.summonname.$invalid">
+			<span ng-show="myForm.summonname.$error.required">Summoner Name is required.</span>
+			</span>							
+			<select ng-model="summonerregion"required>
+				<option disabled selected value>-- select an option --</option>
+				<option ng-repeat="x in regionlist" value="{{x.region}}">{{x.name}}</option>				
+			</select>
+			<span ng-show="myForm.regionlist.$error.required">Select service</span>
+			
+				  <button type="submit" class="pure-button pure-button-primary" ng-click="addPerson()"
+      ng-disabled="myForm.summonname.$dirty && myForm.summonname.$invalid">Submit</button>
+        </div>
+
+    </form>
+
+    <h2>The list</h2>
+
+	<table class="tablecontent">	
+	<tr class="list" ng-repeat="friend in myArray" >
+		<td> 
+		<img class ="champimage"ng-src="{{friend[index +2]}}" alt="404" /> <img class ="champimage"ng-src="{{friend[index +0]}}" alt="404" />  <img class ="champimage"ng-src="{{friend[index +1]}}" alt="404" />  <p class="champtxt"> Name:{{friend[index +3]}} Solo Rank:{{friend[index +4]}} Solo Points:{{friend[index +5]}} <p class="champtxt" ng-if="friend[index+6]"> Flex Rank:{{friend[index +6]}} Flex points:{{friend[index +7]}}</p> </p>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+</body>
+</html>
