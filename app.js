@@ -50,10 +50,7 @@ ajaxExample.controller('mainController',function($scope,$http){
 	  
                 }
 				$scope.myArray = arr;
-            
-          console.log($scope.myArray);
-		 
-     
+                 
           }, function (response) {
 
 
